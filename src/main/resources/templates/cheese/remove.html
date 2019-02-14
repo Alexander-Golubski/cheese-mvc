@@ -9,13 +9,15 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
+
 <form method="post">
-    <p>Name: <input type="text" name="cheeseName" /></p>
-
-    <p>Description: <input type="text" name="cheeseDesc" /></p>
-
-    <p><input type="submit" value="Add Cheese" /></p>
+    <select id="removeCheese" name="removeCheese">
+        <option th:each="cheese : ${cheeses}" th:text="${cheese.getName()}"></option>
+    </select>
+    <p><input type="submit" value="Remove Cheese" /></p>
 </form>
+
+<h1 th:text="${test}"></h1>
 
 </body>
 </html>
